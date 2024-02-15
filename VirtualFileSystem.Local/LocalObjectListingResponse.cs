@@ -18,7 +18,7 @@ namespace VirtualFileSystem.Local
         {
             string pattern = string.IsNullOrEmpty(request.Prefix) ? "*.*" : $"{request.Prefix}*.*";
             var directories = directory.GetDirectories(pattern, SearchOption.TopDirectoryOnly).Select(d => new LocalVDirectory(d, localFileSystem));
-            var files = directory.GetFiles(pattern, SearchOption.TopDirectoryOnly).Take(request.MaxResults).Select(f => new LocalVFile(f, localFileSystem));
+            var files = directory.GetFiles(pattern, SearchOption.TopDirectoryOnly).Take(request.MaxResults).Select(f => new LocalVFile(f));
 
             var response = new LocalObjectListingResponse(directory, request, new LocalObjectListingResponseResult(directories, files), nextIndex + files.Count(), localFileSystem);
 

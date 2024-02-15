@@ -7,7 +7,7 @@ using VirtualFileSystem.Abstractions;
 
 namespace VirtualFileSystem.Local
 {
-    public class LocalVFile(FileInfo file, LocalFileSystem localFileSystem) : IVFile
+    public class LocalVFile(FileInfo file) : IVFile
     {
         public bool IsReadOnly => file.IsReadOnly;
 
