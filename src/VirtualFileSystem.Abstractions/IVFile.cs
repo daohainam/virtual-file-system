@@ -8,6 +8,9 @@ namespace VirtualFileSystem.Abstractions
 {
     public interface IVFile: IVObject
     {
-        Stream Open();
+        Stream OpenRead();
+        Stream OpenWrite();
+        long Length { get; }
+        bool IsReadOnly { get; }
     }
 }

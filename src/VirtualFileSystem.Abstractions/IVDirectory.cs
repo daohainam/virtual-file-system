@@ -8,7 +8,6 @@ namespace VirtualFileSystem.Abstractions
 {
     public interface IVDirectory: IVObject
     {
-        IQueryable<IVDirectory> FindDirectories();
-        IQueryable<IVFile> FindFiles();
+        Task<ObjectListingResponse> FindObjects(ObjectListingRequest request);
     }
 }

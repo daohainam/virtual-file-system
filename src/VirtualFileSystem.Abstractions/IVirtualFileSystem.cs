@@ -2,6 +2,6 @@
 {
     public interface IVirtualFileSystem
     {
-        IVDirectory GetRoot();
+        IVDirectory GetDirectory();
     }
 }

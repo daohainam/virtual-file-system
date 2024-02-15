@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace VirtualFileSystem.Abstractions
 {
-    public interface IVObject
+    public interface IObjectListingResponseResult
     {
-        string Name { get; }
+        public IEnumerable<IVDirectory> Directories { get; }
+        public IEnumerable<IVFile> Files { get; }
     }
 }
