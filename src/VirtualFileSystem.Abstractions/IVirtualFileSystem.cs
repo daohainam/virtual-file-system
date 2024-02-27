@@ -2,6 +2,7 @@
 {
     public interface IVirtualFileSystem
     {
-        IVDirectory GetDirectory();
+        Task<IVDirectory> GetDirectoryAsync(string path, CancellationToken cancellationToken = default);
+        Task<IVFile> GetFileAsync(string path, CancellationToken cancellationToken = default);
     }
 }

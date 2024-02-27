@@ -7,13 +7,22 @@ using VirtualFileSystem.Abstractions;
 
 namespace VirtualFileSystem.Local
 {
-    public class LocalVFile(FileInfo file) : IVFile
+    public class LocalVFile(FileInfo file, LocalFileSystem localFileSystem) : IVFile
     {
+        private readonly FileInfo file = file ?? throw new ArgumentNullException(nameof(file));
+        private readonly LocalFileSystem localFileSystem = localFileSystem ?? throw new ArgumentNullException(nameof(localFileSystem));
+
         public bool IsReadOnly => file.IsReadOnly;
 
         public string Name => file.Name;
 
         public long Length => file.Length;
+
+        public bool Exists => file.Exists;
+
+        public DateTime LastModified => file.LastWriteTime;
+
+        public string FullName => file.FullName;
 
         public Stream OpenRead()
         {

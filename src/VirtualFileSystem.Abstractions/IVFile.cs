@@ -11,6 +11,6 @@ namespace VirtualFileSystem.Abstractions
         Stream OpenRead();
         Stream OpenWrite();
         long Length { get; }
-        bool IsReadOnly { get; }
+        DateTime LastModified { get; }
     }
 }

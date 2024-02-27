@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.S3" Version="3.7.305.28" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\VirtualFileSystem.Abstractions\VirtualFileSystem.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

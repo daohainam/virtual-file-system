@@ -9,5 +9,7 @@ namespace VirtualFileSystem.Abstractions
     public interface IVObject
     {
         string Name { get; }
+        string FullName { get; }
+        bool Exists { get; }
     }
 }
